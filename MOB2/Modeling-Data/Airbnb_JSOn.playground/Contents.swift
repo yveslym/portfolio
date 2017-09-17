@@ -29,7 +29,8 @@ struct search_result: Decodable{
     let index: [house]
 }
 
-let link = "https://api.airbnb.com/v2/search_results"
+
+let link = "https://api.airbnb.com/v2/search_results?key=915pw2pnf4h1aiguhph5gc5b2"
 let url = URL(string: link)
 
 URLSession.shared.dataTask(with: url!){(data,reponse,err) in
@@ -37,9 +38,10 @@ URLSession.shared.dataTask(with: url!){(data,reponse,err) in
     do{
         let decoder = JSONDecoder()
         let search_results = try! decoder.decode(search_result.self, from: data)
-        
     }
+    
 }
+
 
 
 
