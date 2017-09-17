@@ -33,11 +33,19 @@ let link = "https://api.airbnb.com/v2/search_results"
 let url = URL(string: link)
 
 URLSession.shared.dataTask(with: url!){(data,reponse,err) in
-    
     guard let data = data else {return}
-//
     do{
-    let search_results = try
-        JSONDecoder().decode(search_result.self, from: data)
-   }
+        let decoder = JSONDecoder()
+        let search_results = try! decoder.decode(search_result.self, from: data)
+        
+    }
 }
+
+
+
+
+
+
+
+
+
