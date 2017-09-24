@@ -9,40 +9,66 @@
 import Foundation
 
 struct Posts:Decodable {
-    let comments_count: String
-    let day: String
-    let id: Int
-    let product_state: String
-    let tagline: String
-    let category_id: String
-    let created_at: String
+    var name: String?
+    var tagline: String?
+    var votes: Int?
+    var imageURL: String?
+    var day: String?
+    var postID : Int
+//    let comments_count: String
+//    let day: String
+//    let id: Int
+//    let product_state: String
+//    let tagline: String
+//    let category_id: String
+//    let created_at: String
+}
+struct productHunt: Decodable{
+    let posts = [Posts]()
 }
 
 enum netWorkError: Error {
     case cannotConnectToApi
     case CannotRetrieveData
     case cannotRetrieveApi
+    case errorHappen
+}
+enum mykeys: String, CodingKey {
+    case posts
 }
 
-
 class Network{
-    static func get_Network(withLink link:String!,Parameter param:[String:String], completionHandler: @escaping (Posts?,Error?)->Void){
-        let url = URL(string: link)
-        url?.appendingQueryParameters(param)
+    static func get_Network(withLink link:String!,Parameter param:[String:String], completionHandler: @escaping ([Posts]?,Error?)->Void){
+        var url = URL(string: link)
+        let date = Date()
+        let urlParams = ["search[featured]": "true",
+                         "scope": "public",
+                         "created_at": String(describing: date),
+                         "per_page": "20"]
+        url = url?.appendingQueryParameters(urlParams)
+        print (url)
+        
         var urlRequest = URLRequest(url: url!)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.addValue("api.producthunt.com", forHTTPHeaderField:"Host")
         urlRequest.addValue("Content-Type", forHTTPHeaderField: "application/json")
-        urlRequest.addValue("Bearer  6055d5fc5fe82e4a2fe2628dc130d857efaa287e52491fc0b76ab1cfca018400 ", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer 6055d5fc5fe82e4a2fe2628dc130d857efaa287e52491fc0b76ab1cfca018400 ", forHTTPHeaderField: "Authorization")
+        urlRequest.httpMethod = "GET"
         
-        URLSession.shared.dataTask(with: urlRequest){(data,reponse,error) in
+        let session = URLSession.shared
+        session.dataTask(with: urlRequest) { (data,reponse,error) in
             
-            guard let data = data else {return completionHandler(nil, netWorkError.CannotRetrieveData)}
-            guard reponse != nil else {return completionHandler(nil, netWorkError.cannotConnectToApi)}
+//            guard error == nil else { //print (error)
+//                return completionHandler(nil, netWorkError.errorHappen)}
+//            guard let data = data else {return completionHandler(nil, netWorkError.CannotRetrieveData)}
+//            guard reponse != nil else {//print(error)
+//                return completionHandler(nil, netWorkError.cannotConnectToApi)}
             let decoder = JSONDecoder()
-            guard let posts = try! decoder.decode(Posts?.self, from: data) else {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
+            guard let product = try? decoder.decode(productHunt.self, from: data!) else {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
+            let posts = product.posts
+         print (product)
             return completionHandler(posts,nil)
-            }
+            }.resume()
     }
     
 }
@@ -82,5 +108,3 @@ extension Dictionary : URLQueryParameterStringConvertible {
     }
     
 }
-
-
