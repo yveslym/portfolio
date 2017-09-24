@@ -10,18 +10,16 @@ import Foundation
 
 struct Posts:Decodable {
     var name: String?
-    var tagline: String?
+//    var tagline: String?
     var votes: Int?
-    var imageURL: String?
-    var day: String?
-    var postID : Int
-//    let comments_count: String
-//    let day: String
-//    let id: Int
-//    let product_state: String
-//    let tagline: String
-//    let category_id: String
-//    let created_at: String
+//    var imageURL: String?
+//    var day: String?
+//    var postID : Int?
+//   var comments_count: Int?
+//    var id: Int?
+//    var product_state: String?
+//    var category_id: String?
+//    var created_at: String?
 }
 struct productHunt: Decodable{
     let posts = [Posts]()
@@ -32,10 +30,35 @@ enum netWorkError: Error {
     case CannotRetrieveData
     case cannotRetrieveApi
     case errorHappen
+    case couldnotInit
 }
-enum mykeys: String, CodingKey {
-    case posts
+
+extension Posts{
+    
+    enum PostsKey:String,CodingKey {
+        case name
+        case tagline
+        case votes
+        case day
+        case comments_count
+        case product_state
+        case id
+        case created_at
+        
+        
+    }
+    
+    init(from decoder: Decoder) throws{
+     
+        do{
+        let container = try? decoder.container(keyedBy: PostsKey.self)
+        let name = try? container?.decodeIfPresent(String.self, forKey: .name)
+        let votes = try? container?.decodeIfPresent(Int.self, forKey: .votes)
+            self.init(name: name!, votes: votes!)
+    }
+    }
 }
+
 
 class Network{
     static func get_Network(withLink link:String!,Parameter param:[String:String], completionHandler: @escaping ([Posts]?,Error?)->Void){
@@ -46,7 +69,7 @@ class Network{
                          "created_at": String(describing: date),
                          "per_page": "20"]
         url = url?.appendingQueryParameters(urlParams)
-        print (url)
+        //print (url)
         
         var urlRequest = URLRequest(url: url!)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -63,11 +86,12 @@ class Network{
 //            guard let data = data else {return completionHandler(nil, netWorkError.CannotRetrieveData)}
 //            guard reponse != nil else {//print(error)
 //                return completionHandler(nil, netWorkError.cannotConnectToApi)}
+            
             let decoder = JSONDecoder()
-            guard let product = try? decoder.decode(productHunt.self, from: data!) else {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
-            let posts = product.posts
+            let product = try? decoder.decode(productHunt.self, from: data!)//else do {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
+            //let posts = product.posts
          print (product)
-            return completionHandler(posts,nil)
+            //return completionHandler(posts,nil)
             }.resume()
     }
     

@@ -102,19 +102,23 @@ if __name__ == "__main__":
 
                 if is_guessed_char_used(user_guess,guessed_word) == False:
                     guessed_word = guessed_word+user_guess
-                    number_of_guessing_left = reduce_number_of_guess(number_of_guessing_left)  # reduce number of guessing
+
+
+
                     result = compare_guessed_char_and_secret_word_char(built_word,user_guess,secret_word) # true if char match, also return the new built word
 
                     if result[0] == True: # if guessed character match with one of the character
 
                         built_word = result[1]
                         print (built_word)
-                        print("guessing left: ", number_of_guessing_left)
+                        print('guessing left: ', number_of_guessing_left)
 
                         if secret_word == built_word:
                             win == True
                             print(" Nice Job You Won")
                     else:
+                        number_of_guessing_left = reduce_number_of_guess(number_of_guessing_left)  # reduce number of guessing
+                        print (built_word)
                         print(" Wrong character try again")
                         print('number of guessing left: ', number_of_guessing_left)
 
