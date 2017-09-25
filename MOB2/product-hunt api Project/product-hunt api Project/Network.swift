@@ -69,7 +69,7 @@ class Network{
                          "created_at": String(describing: date),
                          "per_page": "20"]
         url = url?.appendingQueryParameters(urlParams)
-        //print (url)
+        
         
         var urlRequest = URLRequest(url: url!)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -81,16 +81,16 @@ class Network{
         let session = URLSession.shared
         session.dataTask(with: urlRequest) { (data,reponse,error) in
             
-//            guard error == nil else { //print (error)
-//                return completionHandler(nil, netWorkError.errorHappen)}
-//            guard let data = data else {return completionHandler(nil, netWorkError.CannotRetrieveData)}
-//            guard reponse != nil else {//print(error)
-//                return completionHandler(nil, netWorkError.cannotConnectToApi)}
+            guard error == nil else { //print (error)
+                return completionHandler(nil, netWorkError.errorHappen)}
+            guard let data = data else {return completionHandler(nil, netWorkError.CannotRetrieveData)}
+            guard reponse != nil else {//print(error)
+                return completionHandler(nil, netWorkError.cannotConnectToApi)}
             
             let decoder = JSONDecoder()
-            let product = try? decoder.decode(productHunt.self, from: data!)//else do {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
+            let product = try? decoder.decode(productHunt.self, from: data)//else do {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
             //let posts = product.posts
-         print (product)
+         
             //return completionHandler(posts,nil)
             }.resume()
     }
