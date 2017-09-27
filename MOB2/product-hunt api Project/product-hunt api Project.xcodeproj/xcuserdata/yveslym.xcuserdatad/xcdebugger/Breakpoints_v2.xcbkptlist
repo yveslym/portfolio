@@ -74,43 +74,123 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "product-hunt api Project/Network.swift"
-            timestampString = "527919988.705886"
+            timestampString = "528150129.209339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "get_Network(withLink:Parameter:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "product-hunt api Project/Network.swift"
+            timestampString = "528150129.211922"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "Network"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "product-hunt api Project/Network.swift"
+            timestampString = "528150129.212681"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "get_Network(withLink:Parameter:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "product-hunt api Project/Network.swift"
+            timestampString = "528150129.213393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "product-hunt api Project/Network.swift"
+            timestampString = "528150129.214096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "get_Network(withLink:Parameter:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "product-hunt api Project/Network.swift"
+            timestampString = "528150129.214611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static product_hunt_api_Project.Network.get_Network(withLink: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, Parameter: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandler: (Swift.Optional&lt;Swift.Array&lt;product_hunt_api_Project.Posts&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "product_hunt_api_Project.Posts.init(from: Swift.Decoder) throws -&gt; product_hunt_api_Project.Posts"
                   moduleName = "product-hunt api Project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
-                  timestampString = "527919988.867363"
+                  timestampString = "528053597.989274"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "2090">
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "246">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static product_hunt_api_Project.Network.get_Network(withLink: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, Parameter: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandler: (Swift.Optional&lt;Swift.Array&lt;product_hunt_api_Project.Posts&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.String in product_hunt_api_Project.Posts.init(from: Swift.Decoder) throws -&gt; product_hunt_api_Project.Posts"
                   moduleName = "product-hunt api Project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
-                  timestampString = "527919988.869871"
+                  timestampString = "528053597.992788"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "665">
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -122,13 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "product-hunt api Project/Network.swift"
-            timestampString = "527919988.706558"
+            timestampString = "528150129.215151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,43 +218,105 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "product-hunt api Project/Network.swift"
-            timestampString = "527919988.706988"
+            timestampString = "528150129.2157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "get_Network(withLink:Parameter:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "product-hunt api Project/Network.swift"
+            timestampString = "528150129.216251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "product-hunt api Project/Network.swift"
+            timestampString = "528150129.216826"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "productHunt"
+            landmarkType = "14">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static product_hunt_api_Project.Network.get_Network(withLink: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, Parameter: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandler: (Swift.Optional&lt;Swift.Array&lt;product_hunt_api_Project.Posts&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "variable initialization expression of product_hunt_api_Project.productHunt.posts : Swift.Array&lt;product_hunt_api_Project.Posts&gt;"
                   moduleName = "product-hunt api Project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
-                  timestampString = "527919988.884915"
+                  timestampString = "528053598.021758"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "2090">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static product_hunt_api_Project.Network.get_Network(withLink: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, Parameter: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandler: (Swift.Optional&lt;Swift.Array&lt;product_hunt_api_Project.Posts&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "product_hunt_api_Project.productHunt.posts.getter : Swift.Array&lt;product_hunt_api_Project.Posts&gt;"
                   moduleName = "product-hunt api Project"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
-                  timestampString = "527919988.887453"
+                  timestampString = "528053598.025611"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "665">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "product_hunt_api_Project.productHunt.init(from: Swift.Decoder) throws -&gt; product_hunt_api_Project.productHunt"
+                  moduleName = "product-hunt api Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
+                  timestampString = "528053598.029225"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "product_hunt_api_Project.productHunt.init() -&gt; product_hunt_api_Project.productHunt"
+                  moduleName = "product-hunt api Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
+                  timestampString = "528053598.03499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -186,13 +328,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "product-hunt api Project/Network.swift"
-            timestampString = "527919988.707452"
+            timestampString = "528150129.217388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "Posts"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "product_hunt_api_Project.Posts.name.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "product-hunt api Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
+                  timestampString = "528053619.733997"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "product_hunt_api_Project.Posts.name.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "product-hunt api Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
+                  timestampString = "528053619.737282"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "product_hunt_api_Project.Posts.init(name: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, votes: Swift.Int) -&gt; product_hunt_api_Project.Posts"
+                  moduleName = "product-hunt api Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yveslym/Desktop/portfolio/MOB2/product-hunt%20api%20Project/product-hunt%20api%20Project/Network.swift"
+                  timestampString = "528053619.740631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "118">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

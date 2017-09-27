@@ -20,6 +20,11 @@ struct Posts:Decodable {
 //    var product_state: String?
 //    var category_id: String?
 //    var created_at: String?
+    
+    init(name: String!,votes: Int) {
+        self.name = name
+        self.votes = votes
+    }
 }
 struct productHunt: Decodable{
     let posts = [Posts]()
@@ -52,9 +57,9 @@ extension Posts{
      
         do{
         let container = try? decoder.container(keyedBy: PostsKey.self)
-        let name = try? container?.decodeIfPresent(String.self, forKey: .name)
-        let votes = try? container?.decodeIfPresent(Int.self, forKey: .votes)
-            self.init(name: name!, votes: votes!)
+        let name = try? container?.decodeIfPresent(String.self, forKey: .name) ?? ""
+        let votes = try? container?.decodeIfPresent(Int.self, forKey: .votes) ?? 0
+            self.init(name: name, votes: votes!)
     }
     }
 }
@@ -75,7 +80,7 @@ class Network{
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.addValue("api.producthunt.com", forHTTPHeaderField:"Host")
         urlRequest.addValue("Content-Type", forHTTPHeaderField: "application/json")
-        urlRequest.addValue("Bearer 6055d5fc5fe82e4a2fe2628dc130d857efaa287e52491fc0b76ab1cfca018400 ", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer 6055d5fc5fe82e4a2fe2628dc130d857efaa287e52491fc0b76ab1cfca018400", forHTTPHeaderField: "Authorization")
         urlRequest.httpMethod = "GET"
         
         let session = URLSession.shared
@@ -87,11 +92,11 @@ class Network{
             guard reponse != nil else {//print(error)
                 return completionHandler(nil, netWorkError.cannotConnectToApi)}
             
-            let decoder = JSONDecoder()
-            let product = try? decoder.decode(productHunt.self, from: data)//else do {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
-            //let posts = product.posts
+           // let decoder = JSONDecoder()
+            guard let product = try? JSONDecoder().decode(productHunt.self, from: data) else  {return completionHandler(nil, netWorkError.cannotRetrieveApi)}
+            let posts = product.posts
          
-            //return completionHandler(posts,nil)
+            return completionHandler(posts,nil)
             }.resume()
     }
     
