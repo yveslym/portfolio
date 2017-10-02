@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  product-hunt api Project
+//  product-hunt api
 //
-//  Created by Yveslym on 9/23/17.
+//  Created by Yveslym on 9/27/17.
 //  Copyright © 2017 Yveslym. All rights reserved.
 //
 
