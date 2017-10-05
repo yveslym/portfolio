@@ -8,11 +8,17 @@
 
 import UIKit
 
-class FriendListTableViewController: UITableViewController {
-
+class FriendListTableViewController: UITableViewController, FriendDelegate {
+    func newFriend(friend: Friends) {
+        self.listOfFriend.append(friend)
+    }
+    
+    var listOfFriend = [Friends]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,25 +33,36 @@ class FriendListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.listOfFriend.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mood", for: indexPath) as? FriendsTableViewCell
+        
+        
+        
+        cell?.fname.text = listOfFriend[indexPath.row].firstName
+        cell?.lname.text = listOfFriend[indexPath.row].lastName
+        cell?.currentMood.text = self.listOfFriend[indexPath.row].currentMood
+        cell?.previousMood.text = self.listOfFriend[indexPath.row].PreviousMood
+        if listOfFriend[indexPath.row].sex == "male"{
+            cell?.myImage.image = #imageLiteral(resourceName: "icons8-user_male_circle")
+        }
+        
 
         // Configure the cell...
 
-        return cell
+        return cell!
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

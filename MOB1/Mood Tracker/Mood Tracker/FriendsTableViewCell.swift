@@ -10,6 +10,17 @@ import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var fname: UILabel!
+    @IBOutlet weak var lname: UILabel!
+    @IBOutlet weak var currentMood: UILabel!
+    @IBOutlet weak var previousMood: UILabel!
+    
+    @IBOutlet weak var myImage: UIImageView!
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

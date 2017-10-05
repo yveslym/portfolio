@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol MoodDelegate: class{
+    func CurrentMood( Mood: String)
+}

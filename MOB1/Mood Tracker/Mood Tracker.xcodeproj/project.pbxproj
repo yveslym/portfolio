@@ -12,6 +12,11 @@
 		2059748C1F84180700249F4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2059748A1F84180700249F4F /* Main.storyboard */; };
 		2059748E1F84180700249F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2059748D1F84180700249F4F /* Assets.xcassets */; };
 		205974911F84180700249F4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2059748F1F84180700249F4F /* LaunchScreen.storyboard */; };
+		205974991F8418C700249F4F /* FriendListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205974981F8418C700249F4F /* FriendListTableViewController.swift */; };
+		2059749B1F8418F700249F4F /* MoodDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059749A1F8418F700249F4F /* MoodDelegate.swift */; };
+		2059749D1F84198400249F4F /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059749C1F84198400249F4F /* Friends.swift */; };
+		2059749F1F84224900249F4F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059749E1F84224900249F4F /* AddFriendViewController.swift */; };
+		205974A11F842E7300249F4F /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205974A01F842E7300249F4F /* FriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		2059748D1F84180700249F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		205974901F84180700249F4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		205974921F84180700249F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		205974981F8418C700249F4F /* FriendListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewController.swift; sourceTree = "<group>"; };
+		2059749A1F8418F700249F4F /* MoodDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDelegate.swift; sourceTree = "<group>"; };
+		2059749C1F84198400249F4F /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		2059749E1F84224900249F4F /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		205974A01F842E7300249F4F /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				2059748D1F84180700249F4F /* Assets.xcassets */,
 				2059748F1F84180700249F4F /* LaunchScreen.storyboard */,
 				205974921F84180700249F4F /* Info.plist */,
+				205974981F8418C700249F4F /* FriendListTableViewController.swift */,
+				2059749A1F8418F700249F4F /* MoodDelegate.swift */,
+				2059749C1F84198400249F4F /* Friends.swift */,
+				2059749E1F84224900249F4F /* AddFriendViewController.swift */,
+				205974A01F842E7300249F4F /* FriendsTableViewCell.swift */,
 			);
 			path = "Mood Tracker";
 			sourceTree = "<group>";
@@ -136,8 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2059749F1F84224900249F4F /* AddFriendViewController.swift in Sources */,
+				205974991F8418C700249F4F /* FriendListTableViewController.swift in Sources */,
 				205974891F84180700249F4F /* ViewController.swift in Sources */,
+				205974A11F842E7300249F4F /* FriendsTableViewCell.swift in Sources */,
 				205974871F84180700249F4F /* AppDelegate.swift in Sources */,
+				2059749D1F84198400249F4F /* Friends.swift in Sources */,
+				2059749B1F8418F700249F4F /* MoodDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
