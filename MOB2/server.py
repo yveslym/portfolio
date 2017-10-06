@@ -12,7 +12,7 @@ app.db = mongo.local
 
 #FETCHING DOCUMENT FROM COLLECTION
 #@app.route('/courses', method= ['GET'])
-@app.route('/courses', method=['GET'])
+@app.route('/courses', methods=['GET'])
 def get_course_by_subject():
 
     #create a collection request argument
