@@ -17,23 +17,53 @@ class Animal(object):
     ...
 
 
-# Implement the Tiger class here as a subclass of Animal
-# Hint: Implement the initializer method only
 class Tiger(Animal):
     def __init__(self, name):
         Animal.__init__(self, name, "meat")
-    ...
 
 
-# Implement the Bear class here as a subclass of Animal
-# Hint: Implement the initializer method and override the sleep method
+# Copy your Bear class here
 class Bear(Animal):
-    def __init__(self,name):
-        Animal.__init__(self,name,"fish")
+    def __init__(self, name):
+        Animal.__init__(self, name, "fish")
+    
     def sleep(self):
-        print(self.name+ " hibernates for 4 months")
-    ...
-# This code tests the Tiger and Bear classes and their eat and sleep methods
+        print("%s hibernates for 4 months" % self.name)
+
+
+# Implement the Unicorn class here as a subclass of Animal
+# Hint: Implement the initializer method and override the sleep method
+class Unicorn(Animal):
+    def __init__(self, name):
+        Animal.__init__(self, name, "marshmallows")
+    
+    def sleep(self):
+        print("%s sleeps in a cloud" % self.name)
+
+
+# Implement the Giraffe class here as a subclass of Animal
+# Hint: Implement the initializer method and override the eat method
+class Giraffe(Animal):
+    def __init__(self, name):
+        Animal.__init__(self, name, "leaves")
+    
+    def eat(self, food):
+        Animal.eat(self, food)
+        if food != self.favoriteFood:
+            print("YUCK! %s spits out %s" % (self.name, food))
+
+
+# Implement the Bee class here as a subclass of Animal
+# Hint: Implement the initializer method and override the sleep and eat methods
+class Bee(Animal):
+    def __init__(self, name):
+        Animal.__init__(self, name, "pollen")
+    
+    def eat(self, food):
+        Animal.eat(self, food)
+        if food != self.favoriteFood:
+            print("YUCK! %s spits out %s" % (self.name, food))
+
 def test():
     def getline():
         # Read a line from standard input and strip surrounding whitespace
@@ -54,6 +84,15 @@ def test():
         elif species == "bear":
             # Create a Bear object
             animal = Bear(name)
+        elif species == "unicorn":
+            # Create a Unicorn object
+            animal = Unicorn(name)
+        elif species == "giraffe":
+            # Create a Giraffe object
+            animal = Giraffe(name)
+        elif species == "bee":
+            # Create a Bee object
+            animal = Bee(name)
         else:
             # Create an Animal object
             animal = Animal(name, "kibble")
@@ -64,4 +103,7 @@ def test():
 
 if __name__ == "__main__":
     test()
+
+
+
 
