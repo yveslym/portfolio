@@ -21,8 +21,20 @@ class Tiger(object):
         if food == self.favoriteFood:
             print("YUM! " + self.name + " wants more " + food)
     ...
+# Implement the Bear class and its initializer, sleep and eat methods here
+class Bear(object):
+    def __init__(self,name):
+        self.name = name
+        self.favoriteFood ='fish'
+    def sleep(self):
+        print (self.name+ " hibernates for 4 months")
+    def eat(self, food):
+        print(self.name + " eats "+ food)
+        if food == self.favoriteFood:
+            print("YUM! " + self.name + " wants more " + food)
 
-# This code tests the Tiger class and its eat and sleep methods
+...
+
 def test():
     def getline():
         # Read a line from standard input and strip surrounding whitespace
@@ -31,13 +43,23 @@ def test():
     animalCount = int(getline())
     # Iterate through the input for each animal
     for count in range(animalCount):
-        # Get the animal's name and food to eat
+        # Get the animal's species, name and food to eat
+        species = getline()
         name = getline()
         food = getline()
-        # Create a Tiger object and test its eat and sleep methods
-        tiger = Tiger(name)
-        tiger.eat(food)
-        tiger.sleep()
+        # Check what species the animal is
+        if species == "tiger":
+            # Create a Tiger object and test its eat and sleep methods
+            tiger = Tiger(name)
+            tiger.eat(food)
+            tiger.sleep()
+        elif species == "bear":
+            # Create a Bear object and test its eat and sleep methods
+            bear = Bear(name)
+            bear.eat(food)
+            bear.sleep()
+        else:
+            print("Unknown animal species: {}".format(species))
 
 
 if __name__ == "__main__":
