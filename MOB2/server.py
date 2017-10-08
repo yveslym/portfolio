@@ -1,53 +1,51 @@
-import json
-import pdb
-from flask import Flask, request
+from flask import Flask, request, make_response
+from flask_restful import Resource, Api
 from pymongo import MongoClient
-from bson import Binary, Code
-from bson.json_util import dumps
+from utils.mongo_json_encoder import JSONEncoder
+from bson.objectid import ObjectId
+import bcrypt
+
 
 app = Flask(__name__)
-
 mongo = MongoClient('localhost', 27017)
-app.db = mongo.local
+app.db = mongo.server
+app.bcrypt_rounds = 12
+api = Api(app)
 
-#FETCHING DOCUMENT FROM COLLECTION
-#@app.route('/courses', method= ['GET'])
-@app.route('/courses', methods=['GET'])
-def get_course_by_subject():
 
-    #create a collection request argument
-    course_dict = request.args
+## Write Resources here
+class User(Resource):
+    def get(self):
+        user_collect = app.db.users
+        user_dict = user_collect.find()
+        if user_dict is None:
+            response = jsonify(data=[])
+            pdb.set_trace()
+            response.status_code = 404
+            return response
+        else:
+            return myobject
+    def post(self):
+        user_dict = request.json
+        user_collect = app.db.users
 
-    #createan subject document filter
-    subject_name = course_dict["subject"]
+        result = user_collect.insert_one(user_dict)
+        return result
 
-    #create a subject collection
-    subject = app.database.courses
 
-    #look trough the database in the collection subject, find subject name
-    result = subject.find_one({'subject': subject_name})
 
-    response_json = JSONEncoder().encode(result)
 
-    return (response_json, 200, None)
+## Add api routes here
 
-#@app.route('/courses')
-#def fetch_courses():
-#
-#    course_dict = request.json
-#
-#    json_subject = dumps(course_dict)
-#
-#    print (json_subject)
-#    return (json_subject,200, None)
+#  Custom JSON serializer for flask_restful
+@api.representation('application/json')
+def output_json(data, code, headers=None):
+    resp = make_response(JSONEncoder().encode(data), code)
+    resp.headers.extend(headers or {})
+    return resp
 
 if __name__ == '__main__':
-    app.run()
-#fetch_courses()
-
-
-
-
-
-
-
+    # Turn this on in debug mode to get detailled information about request
+    # related exceptions: http://flask.pocoo.org/docs/0.10/config/
+    app.config['TRAP_BAD_REQUEST_ERRORS'] = True
+    app.run(debug=True)
