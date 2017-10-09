@@ -1,21 +1,28 @@
-# Copy your Animal class here
-# Implement the Animal superclass here
-# Hint: Copy your Tiger class from Problem 4 and modify it to be more general
+#Copy your Animal class here and modify it to automatically count population
+# Hint: Modify the initializer method to count the number of animals created
 class Animal(object):
-    def __init__(self,name,favoriteFood):
+    # A variable to count population
+    population = 0
+    # Implement the populationCount class method here
+    @classmethod
+    def populationCount(cls):
+        cls.population += 1
+
+    def __init__(self, name, favoriteFood):
         self.name = name
         self.favoriteFood = favoriteFood
+        Animal.populationCount()
+
     def sleep(self):
-        print(self.name + " sleeps for 8 hours")
-    ...
-    # Implement the eat function here
-    def eat(self,food):
-        print(self.name + " eats " + food)
+        print("%s sleeps for 8 hours" % self.name)
+
+    def eat(self, food):
+        print("%s eats %s" % (self.name, food))
         if food == self.favoriteFood:
-            print("YUM! " + self.name + " wants more " + food)
-    ...
+            print("YUM! %s wants more %s" % (self.name, food))
 
 
+# Copy your Tiger class here
 class Tiger(Animal):
     def __init__(self, name):
         Animal.__init__(self, name, "meat")
@@ -63,25 +70,25 @@ class Bee(Animal):
         if food != self.favoriteFood:
             print("YUCK! %s spits out %s" % (self.name, food))
 
+    def sleep(self):
+        print("%s never sleeps" % self.name)
 
 # Implement the Zookeeper class here
 class Zookeeper(object):
     # Implement the initializer method here
     def __init__(self, name):
         self.name = name
-        ...
 
     # Implement the feedAnimals method here
-    def feedAnimals(self, animals, food):
-        length = len(animals)
-        #print(self.name+' is feeding '+food+' to '+str(length)+' animals')
-        print('%s is feeding %s to %s animals' %(self.name,food,len(animals)))
-        for animal in animals:
+    def feedAnimals(self, animalsToFeed, food):
+        print("%s is feeding %s to %s of %s total animals" % (self.name, food, len(animalsToFeed), Animal.population))
+        for animal in animalsToFeed:
             animal.eat(food)
             animal.sleep()
-        ...
+
 # This code tests the Animal, Tiger, Bear, Unicorn, Giraffe and Bee classes
-# and then tests the Zookeeper class and its feedAnimals method
+# and then tests the Zookeeper class and its feedAnimals method, which will
+# also test the Animal.populationCount class method
 def test():
     def getline():
         # Read a line from standard input and strip surrounding whitespace
@@ -116,12 +123,14 @@ def test():
             animal = Animal(name, "kibble")
         # Add the animal to the list of animals
         animals.append(animal)
+    # Remove the first and last animal from the list of animals
+    animalsToFeed = animals[1:-1]
     # Get the zookeeper's name and food to feed the animals
     name = getline()
     food = getline()
     # Create a Zookeeper object and test its feedAnimals method
     zookeeper = Zookeeper(name)
-    zookeeper.feedAnimals(animals, food)
+    zookeeper.feedAnimals(animalsToFeed, food)
 
 
 if __name__ == "__main__":
