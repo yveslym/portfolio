@@ -1,5 +1,4 @@
-import sys
-
+# Copy your Animal class here
 # Implement the Animal superclass here
 # Hint: Copy your Tiger class from Problem 4 and modify it to be more general
 class Animal(object):
@@ -26,7 +25,7 @@ class Tiger(Animal):
 class Bear(Animal):
     def __init__(self, name):
         Animal.__init__(self, name, "fish")
-    
+
     def sleep(self):
         print("%s hibernates for 4 months" % self.name)
 
@@ -36,7 +35,7 @@ class Bear(Animal):
 class Unicorn(Animal):
     def __init__(self, name):
         Animal.__init__(self, name, "marshmallows")
-    
+
     def sleep(self):
         print("%s sleeps in a cloud" % self.name)
 
@@ -46,7 +45,7 @@ class Unicorn(Animal):
 class Giraffe(Animal):
     def __init__(self, name):
         Animal.__init__(self, name, "leaves")
-    
+
     def eat(self, food):
         Animal.eat(self, food)
         if food != self.favoriteFood:
@@ -58,24 +57,43 @@ class Giraffe(Animal):
 class Bee(Animal):
     def __init__(self, name):
         Animal.__init__(self, name, "pollen")
-    
+
     def eat(self, food):
         Animal.eat(self, food)
         if food != self.favoriteFood:
             print("YUCK! %s spits out %s" % (self.name, food))
 
+
+# Implement the Zookeeper class here
+class Zookeeper(object):
+    # Implement the initializer method here
+    def __init__(self, name):
+        self.name = name
+        ...
+
+    # Implement the feedAnimals method here
+    def feedAnimals(self, animals, food):
+        length = len(animals)
+        #print(self.name+' is feeding '+food+' to '+str(length)+' animals')
+        print('%s is feeding %s to %s animals' %(self.name,food,len(animals)))
+        for animal in animals:
+            animal.eat(food)
+            animal.sleep()
+        ...
+# This code tests the Animal, Tiger, Bear, Unicorn, Giraffe and Bee classes
+# and then tests the Zookeeper class and its feedAnimals method
 def test():
     def getline():
         # Read a line from standard input and strip surrounding whitespace
         return sys.stdin.readline().strip()
     # Get the number of animals
     animalCount = int(getline())
+    animals = []
     # Iterate through the input for each animal
     for count in range(animalCount):
-        # Get the animal's species, name and food to eat
+        # Get the animal's species and name
         species = getline()
         name = getline()
-        food = getline()
         animal = None
         # Check what species the animal is
         if species == "tiger":
@@ -96,14 +114,15 @@ def test():
         else:
             # Create an Animal object
             animal = Animal(name, "kibble")
-        # Test the animal's eat and sleep methods
-        animal.eat(food)
-        animal.sleep()
+        # Add the animal to the list of animals
+        animals.append(animal)
+    # Get the zookeeper's name and food to feed the animals
+    name = getline()
+    food = getline()
+    # Create a Zookeeper object and test its feedAnimals method
+    zookeeper = Zookeeper(name)
+    zookeeper.feedAnimals(animals, food)
 
 
 if __name__ == "__main__":
     test()
-
-
-
-
